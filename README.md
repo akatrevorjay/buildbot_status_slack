@@ -9,13 +9,13 @@ This plugin is based on the buildbot-status-hipchat plugin created by the dev te
 
 ### via pip
 
-```
-pip install -e git+https://github.com/mindmatters/buildbot-status-slack#egg=slack
+```sh
+pip install -e 'git+https://github.com/mindmatters/buildbot-status-slack#egg=slack'
 ```
 
 ### manual
 
-Copy slack.py next to your master.cfg file
+Copy `slack.py` next to your master.cfg file
 
 
 ## Setup
@@ -24,13 +24,13 @@ Create a new Incomming Webhook in your slack account.
 
 Then in your master.cfg, add the following:
 
-```
-import slack
-c['status'].append(slack.SlackStatusPush("YOUR_SLACK_WEBURL"))
+```py
+import buildbot_status_slack
+c['status'].append(buildbot_status_slack.SlackStatusPush("YOUR_SLACK_WEBURL"))
 ```
 
 ### Additional Options:
-```
+```py
   localhost_replace = False
   builder_name = False
   username = None
@@ -41,9 +41,9 @@ c['status'].append(slack.SlackStatusPush("YOUR_SLACK_WEBURL"))
 
 ### Complete Example:
 
-```
-import slack
-c['status'].append(slack.SlackStatusPush("YOUR_SLACK_WEBURL", "http://ci.mindmatters.de", "mindmatters Builder", None, None, False, True)
+```py
+import buildbot_status_slack
+c['status'].append(buildbot_status_slack.SlackStatusPush("YOUR_SLACK_WEBURL", "http://ci.mindmatters.de", "mindmatters Builder", None, None, False, True)
 ```
 
 Enjoy!
